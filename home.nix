@@ -71,8 +71,6 @@ xdg.configFile = {
     kdePackages.breeze
     kdePackages.qt6ct
     libsForQt5.qt5ct
-    nerd-fonts.jetbrains-mono
-    jetbrains-mono
 
 
     # 1. Microphone Toggle Script

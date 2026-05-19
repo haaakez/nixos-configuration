@@ -121,6 +121,10 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
   };
+  fonts.packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+      jetbrains-mono
+    ];
 
   system.stateVersion = "25.11"; 
 }
