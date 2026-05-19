@@ -19,6 +19,7 @@ xdg.configFile = {
     "fish".source = ./dotfiles/fish;
     "qt5ct".source = ./dotfiles/qt5ct;
     "qt6ct".source = ./dotfiles/qt6ct;
+    "niri".source = ./dotfiles/niri;
     
   };
     programs.firefox.configPath = ".mozilla/firefox";
