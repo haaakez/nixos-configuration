@@ -6,6 +6,10 @@
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
+window-rule {
+    match app-id="spotify"
+    opacity 0.85 
+}
 debug {
     // Replace with your exact NVIDIA render node or by-path symlink
     render-drm-device "/dev/dri/renderD128" 
