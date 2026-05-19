@@ -21,7 +21,7 @@ To rebuild, run:
 sudo nixos-rebuild switch --flake .#nixos
 
 ```
-##Tree
+## Tree
 ```
 nixos-configuration/
 ├── flake.nix                 
