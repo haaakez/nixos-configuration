@@ -6,8 +6,10 @@
   home.homeDirectory = "/home/haakez";
   home.stateVersion = "25.11";
 
-
-  imports = [ inputs.textfox.homeManagerModules.default ];
+imports = [ 
+    inputs.textfox.homeManagerModules.default
+    inputs.spicetify-nix.homeManagerModules.default # <-- Add this line
+  ];
 xdg.configFile = {
     "waybar".source = ./dotfiles/waybar;
     "mako".source = ./dotfiles/mako;
@@ -31,14 +33,28 @@ xdg.configFile = {
     };
    
   };
-
+programs.spicetify =
+    let
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+    in
+    {
+      enable = true;
+      
+      # The "text" theme is the official name for spicetify-tui
+      theme = spicePkgs.themes.text;
+      
+      # You can add extensions here later, like adblock!
+      enabledExtensions = with spicePkgs.extensions; [
+        adblock
+        hidePodcasts
+        shuffle
+      ];
+    };
   home.packages = with pkgs; [
     firefox
     vesktop
     telegram-desktop
 
-    spotify
-    ncspot
     mpv
     imv
     cava
