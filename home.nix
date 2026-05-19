@@ -8,7 +8,7 @@
 
 imports = [ 
     inputs.textfox.homeManagerModules.default
-    inputs.spicetify-nix.homeManagerModules.default # <-- Add this line
+    inputs.spicetify-nix.homeManagerModules.default
   ];
 xdg.configFile = {
     "waybar".source = ./dotfiles/waybar;
