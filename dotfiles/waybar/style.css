@@ -1,0 +1,52 @@
+* {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 15px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+window#waybar {
+    /* Translates Yambar's 060606d9 */
+    background-color: rgba(6, 6, 6, 0.85); 
+    color: #d0d0d0;
+}
+
+/* --- LEFT: WORKSPACES --- */
+#workspaces button {
+    padding: 0 12px; /* Increased from 8px */
+    color: #555555; 
+    background: transparent;
+}
+#workspaces button.active {
+    color: #ffffff; /* Active workspace color */
+}
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: transparent;
+    color: #d0d0d0;
+}
+
+/* --- CENTER: CLOCK --- */
+#clock {
+    color: #ffffff;
+}
+/* --- RIGHT: MODULES --- */
+#language,
+#pulseaudio,
+#custom-power {
+    padding: 0 12px; 
+    color: #888888; 
+}
+
+#custom-power {
+    color: #555555;
+}
+
+#custom-power:hover {
+    color: #ffffff;
+}
+

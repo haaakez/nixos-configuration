@@ -1,0 +1,56 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+
+    "modules-left": [
+        "niri/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+    	  "tray",
+    	  "pulseaudio#microphone",
+        "niri/language",
+        "pulseaudio",
+        "custom/power"
+      
+    ],
+
+    "niri/workspaces": {
+        "format": "{index}",
+        "disable-scroll": true
+    },
+
+    "clock": {
+        "format": "{:%a, %b %d  %H:%M}",
+        "tooltip": false
+    },
+
+
+    "pulseaudio": {
+        "format": "vol: {volume}",
+        "format-muted": "mute",
+        "on-click": "pavucontrol"
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "systemctl poweroff",
+        "on-click-right": "systemctl reboot",
+        "tooltip": false
+    },
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": "mic on",
+        "format-source-muted": "mic of",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
+        "scroll-step": 5
+    }
+}
+
+
