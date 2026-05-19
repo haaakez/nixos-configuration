@@ -5,6 +5,10 @@
     # The official NixOS package source
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # Home Manager, locked to the same packages as your system
     home-manager = {
       url = "github:nix-community/home-manager";
