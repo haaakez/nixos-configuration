@@ -1,6 +1,6 @@
 # хейкез's NixOS Configuration
 
-![Screenshot](https://cdn.discordapp.com/attachments/1150468182805577829/1503368775544737823/image.png?ex=6a0da4c7&is=6a0c5347&hm=b5545844a1fb53050aef39e6d5f581712764442ba911c86bee613356fe0b9c1d&)
+![Screenshot](image-63.png)
 
 ## System Components
 
@@ -20,7 +20,9 @@ To rebuild, run:
 ```bash
 sudo nixos-rebuild switch --flake .#nixos
 
-
+```
+##Tree
+```
 nixos-configuration/
 ├── flake.nix                 
 ├── home.nix                  
@@ -33,3 +35,4 @@ nixos-configuration/
     ├── waybar/
     ├── kitty/
     └── ...
+```
