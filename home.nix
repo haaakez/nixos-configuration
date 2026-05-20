@@ -31,9 +31,11 @@ xdg.configFile = {
     textfox = {
     enable = true;
     profiles = [ "haakez" ];
-background = {
-        color = "#000000d9"; # True Hex Transparency
+config = {
+      background = {
+        color = "#000000d9"; 
       };
+    };
   };
 programs.spicetify =
     let
