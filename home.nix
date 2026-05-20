@@ -24,14 +24,16 @@ xdg.configFile = {
     "niri".source = ./dotfiles/niri;
     
   };
+  programs.firefox.profiles."haakez".settings = {
+      "widget.wayland.transparent-background" = true;
+    };
     programs.firefox.configPath = ".mozilla/firefox";
     textfox = {
     enable = true;
     profiles = [ "haakez" ];
-    config = {
-      # We will customize this later!
-    };
-   
+background = {
+        color = "#000000d9"; # True Hex Transparency
+      };
   };
 programs.spicetify =
     let
