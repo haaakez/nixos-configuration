@@ -8,7 +8,7 @@
 // https://yalter.github.io/niri/Configuration:-Input
 window-rule {
     match app-id="spotify"
-    opacity 0.85 
+    opacity 0.75 
 }
 debug {
     // Replace with your exact NVIDIA render node or by-path symlink
