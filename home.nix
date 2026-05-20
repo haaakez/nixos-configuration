@@ -1,7 +1,6 @@
 { config, pkgs, inputs, ... }:
 
 {
-  # Core Home Manager Settings
   home.username = "haakez";
   home.homeDirectory = "/home/haakez";
   home.stateVersion = "25.11";
@@ -42,31 +41,30 @@ programs.spicetify =
     {
       enable = true;
       
-      # The "text" theme is the official name for spicetify-tui
       theme = spicePkgs.themes.text;
-      # Tell Spicetify we are injecting our own colors
+    
             colorScheme = "custom"; 
             
-            # The Pure Monochrome Palette
+            
             customColorScheme = {
-              text = "ffffff";          # Pure white text
-              subtext = "999999";       # Gray subtext
-              main = "000000";          # Pitch black background
-              sidebar = "000000";       # Pitch black sidebar
-              player = "000000";        # Pitch black player bar
-              card = "111111";          # Very dark gray cards/panels
-              shadow = "000000";        # Black shadows
-              selectedRow = "222222";   # Dark gray track selection
-              button = "ffffff";        # White play/pause buttons
-              buttonActive = "cccccc";  # Light gray when clicked
-              buttonDisabled = "444444";# Dark gray disabled toggles
-              tabActive = "222222";     # Dark gray active tabs
-              notification = "111111";  # Dark gray popups
-              notificationError = "ffffff"; # White errors
+              text = "ffffff";         
+              subtext = "999999";      
+              main = "000000";        
+              sidebar = "000000";     
+              player = "000000";       
+              card = "111111";         
+              shadow = "000000";       
+              selectedRow = "222222";   
+              button = "ffffff";   
+              buttonActive = "cccccc";
+              buttonDisabled = "444444";
+              tabActive = "222222";  
+              notification = "111111"; 
+              notificationError = "ffffff"; 
               misc = "333333";
             };
       
-      # You can add extensions here later, like adblock!
+
       enabledExtensions = with spicePkgs.extensions; [
         adblock
         hidePodcasts
