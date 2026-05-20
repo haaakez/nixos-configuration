@@ -24,19 +24,17 @@ xdg.configFile = {
     "niri".source = ./dotfiles/niri;
     
   };
-  programs.firefox.profiles."haakez".settings = {
-      "widget.wayland.transparent-background" = true;
-    };
-    programs.firefox.configPath = ".mozilla/firefox";
-    textfox = {
-    enable = true;
-    profiles = [ "haakez" ];
-config = {
-      background = {
-        color = "#000000d9"; 
-      };
-    };
+programs.firefox.profiles."haakez".settings = {
+    "widget.wayland.transparent-background" = true;
+    "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+    "gfx.webrender.all" = true;
   };
+    programs.firefox.configPath = ".mozilla/firefox";
+  textfox = {
+    enable = true;
+    profiles = [ "haakez" ]; 
+    
+};
 programs.spicetify =
     let
       spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
@@ -46,6 +44,27 @@ programs.spicetify =
       
       # The "text" theme is the official name for spicetify-tui
       theme = spicePkgs.themes.text;
+      # Tell Spicetify we are injecting our own colors
+            colorScheme = "custom"; 
+            
+            # The Pure Monochrome Palette
+            customColorScheme = {
+              text = "ffffff";          # Pure white text
+              subtext = "999999";       # Gray subtext
+              main = "000000";          # Pitch black background
+              sidebar = "000000";       # Pitch black sidebar
+              player = "000000";        # Pitch black player bar
+              card = "111111";          # Very dark gray cards/panels
+              shadow = "000000";        # Black shadows
+              selectedRow = "222222";   # Dark gray track selection
+              button = "ffffff";        # White play/pause buttons
+              buttonActive = "cccccc";  # Light gray when clicked
+              buttonDisabled = "444444";# Dark gray disabled toggles
+              tabActive = "222222";     # Dark gray active tabs
+              notification = "111111";  # Dark gray popups
+              notificationError = "ffffff"; # White errors
+              misc = "333333";
+            };
       
       # You can add extensions here later, like adblock!
       enabledExtensions = with spicePkgs.extensions; [
