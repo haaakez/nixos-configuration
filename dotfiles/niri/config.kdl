@@ -3,13 +3,71 @@
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
 
+blur {
+    // Number of times the blur algorithm is applied. 
+    // Default is 3. Lower to 1 or 2 for a weaker blur.
+    passes 3
+
+
+    // Default is 3.0. Lowering this makes the blur tighter.
+    offset 3.0
+    
+
+     noise 0.04
+     saturation 1.7
+}
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
-window-rule {
-    match app-id="spotify"
-    opacity 0.75 
+clipboard {
+    disable-primary
 }
+layer-rule {
+    match layer="background"
+    place-within-backdrop true
+}
+window-rule{
+	match app-id="spotify"
+	match app-id="code"
+	opacity 0.75
+}
+window-rule{
+	match app-id="firefox"
+	
+	opacity 0.85
+}
+window-rule{
+	match app-id="telegram"
+	match app-id="steam"
+	opacity 0.95
+}
+layer-rule {
+    match namespace="^waybar$"
+    match namespace="^launcher$"
+    match namespace="^notifications$"
+ 
+    
+    background-effect {
+        blur true
+        xray false // Set to false to blur windows behind the bar, not just the wallpaper
+    }
+}
+window-rule{
+	match app-id="fuzzel"
+	match app-id="fnott"
+	match app-id="waybar"
+	background-effect{
+		blur true
+	}
+}
+window-rule{
+	background-effect {
+	    blur true
+	    
+	}
+}
+
+
 debug {
     // Replace with your exact NVIDIA render node or by-path symlink
     render-drm-device "/dev/dri/renderD128" 
@@ -23,13 +81,14 @@ window-rule {
 spawn-at-startup "swww-daemon"
 overview {
     // This kills the grey screen completely
-    backdrop-color "transparent"
+ 
     
     // Optional: If you want to keep the flat, brutalist aesthetic, 
     // you can disable the drop shadows behind the workspaces too.
     workspace-shadow {
         off
     }
+    zoom 0.6
 }
 cursor{
 	xcursor-size 24
@@ -104,13 +163,13 @@ input {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-output "HDMI-A-2"{
-	mode "1920x1080@239.999"
-	position x=0 y=0
-}
 output "HDMI-A-1"{
 	mode "1920x1080@239.999"
 	position x=0 y=0
+}
+output "DP-3"{
+	mode "1920x1080@239.999"
+	position x=1920 y=0
 }
 /-output "eDP-1" {
     // Uncomment this line to disable this output.
@@ -157,7 +216,7 @@ layout {
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
     center-focused-column "never"
-
+	background-color "transparent"
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
@@ -251,7 +310,7 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        // on
+         on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -324,10 +383,10 @@ hotkey-overlay {
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
 // The path is formatted with strftime(3) to give you the screenshot date and time.
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+//screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 // You can also set this to null to disable saving screenshots to disk.
-// screenshot-path null
+screenshot-path null
 
 // Animation settings.
 // The wiki explains how to configure individual animations:
@@ -337,7 +396,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+     slowdown 1.1
 }
 
 // Window rules let you adjust behavior for individual windows.

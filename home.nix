@@ -11,7 +11,7 @@ imports = [
   ];
 xdg.configFile = {
     "waybar".source = ./dotfiles/waybar;
-    "mako".source = ./dotfiles/mako;
+    "fnott".source = ./dotfiles/fnott;
     "kitty".source = ./dotfiles/kitty;
     "fastfetch".source = ./dotfiles/fastfetch;
     "fuzzel".source = ./dotfiles/fuzzel;
@@ -71,7 +71,14 @@ programs.spicetify =
         shuffle
       ];
     };
+    programs.micro = {
+      enable = true;
+      settings = {
+        colorscheme = "simple";
+      };
+    };
   home.packages = with pkgs; [
+  	nodejs_24
     firefox
     vesktop
     telegram-desktop
@@ -83,21 +90,27 @@ programs.spicetify =
 
     kitty
     neovim
-    micro
     vscode
+    darktable
+    gimp
+    gphoto2
+    
 
     fastfetch
     btop
     yazi
     kdePackages.dolphin
     kdePackages.ark
+    kdePackages.kdenlive
     pavucontrol
+    cmatrix
+    peaclock
 
     waybar
     swaybg
     fuzzel
     wallust
-    mako
+    fnott
     polkit_gnome
     wl-clipboard
     cliphist
@@ -141,6 +154,9 @@ programs.spicetify =
       fi
     '')
   ];
+  programs.fish.shellAliases = {
+      gemini = "npx --yes @google/gemini-cli";
+    };
 
   programs.home-manager.enable = true;
 }

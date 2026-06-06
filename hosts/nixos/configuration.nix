@@ -108,9 +108,14 @@
     GTK_THEME = "Adwaita:dark";
     QT_QPA_PLATFORMTHEME = "qt6ct";
   };
+  environment.sessionVariables = {
+    QT_STYLE_OVERRIDE = "Breeze-Dark";
+  };
   environment.systemPackages = with pkgs; [
       git
       fish
+      python3
+      nemo
     ];
 
   nixpkgs.config.allowUnfree = true;

@@ -1,27 +1,29 @@
-# хейкез's NixOS Configuration
+# хейкез's nixos config
 
-![Screenshot](image-63.png)
+![Screenshot](wj4tn4r.png)
 
-## System Components
+## system components
 
-* **OS:** NixOS (Unstable)
-* **Compositor:** Niri 
-* **Shell:** Fish
-* **Terminal:** Kitty
-* **Bar:** Waybar
-* **Browser:** Firefox (Textfox)
-* **Launcher:** Fuzzel
-* **Notifications:** Mako
+* **os:** nixos
+* **sompositor:** niri 
+* **shell:** fish
+* **terminal:** kitty
+* **bar:** waybar
+* **browser:** firefox
+* **launcher:** fuzzel
+* **notifications:** fnott
 
-## Usage
+## usage
 
-To rebuild, run:
+to install, run:
 
 ```bash
+git clone https://github.com/haaakez/nixos-configuration
+cd ~/nixos-configuration
 sudo nixos-rebuild switch --flake .#nixos
 
 ```
-## Tree
+## tree
 ```
 nixos-configuration/
 ├── flake.nix                 
