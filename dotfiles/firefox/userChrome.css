@@ -1,0 +1,100 @@
+/* __            __  ____            */
+/* / /____  _  __/ /_/ __/___  _  __  */
+/* / __/ _ \| |/_/ __/ /_/ __ \| |/_/  */
+/* / /_/  __/>  </ /_/ __/ /_/ />  <    */
+/* \__/\___/_/|_|\__/_/  \____/_/|_|    */
+
+@import url("browser.css");
+@import url("findbar.css");
+@import url("icons.css");
+@import url("menus.css");
+@import url("navbar.css");
+@import url("overwrites.css");
+@import url("sidebar.css");
+@import url("tabs.css");
+@import url("urlbar.css");
+
+/* configurations - DO NOT CHANGE ORDER */
+@import url("defaults.css");
+@import url("config.css");
+
+* {
+  font-family: var(--tf-font-family);
+  font-size: var(--tf-font-size);
+}
+
+::placeholder {
+  text-transform: var(--tf-text-transform);
+}
+
+:root {
+  --toolbar-bgcolor: transparent !important;
+  --lwt-accent-color: transparent !important;
+  --lwt-accent-color-inactive: transparent !important;
+  --tf-nav-bg: transparent !important;
+  --tf-bg: transparent !important; 
+}
+
+:root,
+window,
+body {
+  background: transparent !important;
+  background-color: transparent !important;
+  appearance: none !important;
+}
+
+#main-window {
+  background: rgba(0, 0, 0, 0.4) !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  appearance: none !important;
+}
+
+#nav-bar,
+box#vertical-tabs,
+.buttons-wrapper,
+#sidebar-box {
+  background: rgba(0, 0, 0, 0.6) !important;
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  background-image: none !important;
+}
+
+#tabbrowser-tabbox {
+  background: #0f0f0f !important;
+  background-color: #0f0f0f !important;
+  background-image: none !important;
+}
+
+#nav-bar::before,
+box#vertical-tabs::before,
+.buttons-wrapper::before,
+#sidebar-box::before,
+#tabbrowser-tabbox::before,
+.browserContainer,
+.browser-toolbox-background,
+#browser,
+#sidebar-main,
+#navigator-toolbox,
+#TabsToolbar,
+#PersonalToolbar,
+#sidebar,
+toolbar,
+browser {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  appearance: none !important;
+}
+:root,
+menupopup,
+panel,
+.popup-internal-box,
+#appMenu-popup {
+  --panel-background: #0f0f0f !important;
+  background: #0f0f0f !important;
+  background-color: #0f0f0f !important;
+}
+
+menupopup *,
+panel * {
+  background-color: transparent !important;
+}

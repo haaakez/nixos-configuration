@@ -16,11 +16,10 @@ xdg.configFile = {
     "fastfetch".source = ./dotfiles/fastfetch;
     "fuzzel".source = ./dotfiles/fuzzel;
     "btop".source = ./dotfiles/btop;
-    "cava".source = ./dotfiles/cava;
-    "fish".source = ./dotfiles/fish;
     "qt5ct".source = ./dotfiles/qt5ct;
     "qt6ct".source = ./dotfiles/qt6ct;
     "niri".source = ./dotfiles/niri;
+    
     
   };
 programs.firefox.profiles."haakez".settings = {
@@ -33,7 +32,7 @@ programs.firefox.profiles."haakez".settings = {
     enable = true;
     profiles = [ "haakez" ]; 
     
-};
+};home.file.".mozilla/firefox/haakez/chrome/userChrome.css".source = ./dotfiles/firefox/userChrome.css;
 programs.spicetify =
     let
       spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
@@ -94,6 +93,7 @@ programs.spicetify =
     darktable
     gimp
     gphoto2
+    unityhub
     
 
     fastfetch
@@ -122,6 +122,7 @@ programs.spicetify =
     kdePackages.breeze
     kdePackages.qt6ct
     libsForQt5.qt5ct
+    gemini-cli
 
 
     # 1. Microphone Toggle Script
