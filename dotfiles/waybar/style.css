@@ -8,19 +8,17 @@
     padding: 0;
 }
 window#waybar {
-    /* Translates Yambar's 060606d9 */
     background-color: rgba(6, 6, 6, 0.85); 
     color: #d0d0d0;
 }
 
-/* --- LEFT: WORKSPACES --- */
 #workspaces button {
-    padding: 0 12px; /* Increased from 8px */
+    padding: 0 12px;
     color: #555555; 
     background: transparent;
 }
 #workspaces button.active {
-    color: #ffffff; /* Active workspace color */
+    color: #ffffff; 
 }
 
 #workspaces button:hover {
@@ -30,11 +28,11 @@ window#waybar {
     color: #d0d0d0;
 }
 
-/* --- CENTER: CLOCK --- */
+
 #clock {
     color: #ffffff;
 }
-/* --- RIGHT: MODULES --- */
+
 #language,
 #pulseaudio,
 #custom-power {
