@@ -4,17 +4,14 @@
 // https://yalter.github.io/niri/Configuration:-Introduction
 
 blur {
-    // Number of times the blur algorithm is applied. 
-    // Default is 3. Lower to 1 or 2 for a weaker blur.
+
     passes 3
 
-
-    // Default is 3.0. Lowering this makes the blur tighter.
     offset 3.0
     
+    noise 0.02
 
-     noise 0.02
-     saturation 1.7
+    saturation 1.7
 }
 // Input device configuration.
 // Find the full list of options on the wiki:
@@ -43,7 +40,7 @@ layer-rule {
     
     background-effect {
         blur true
-        xray false // Set to false to blur windows behind the bar, not just the wallpaper
+        xray false 
     }
     shadow {
             on
@@ -66,7 +63,7 @@ window-rule{
 
 
 debug {
-    // Replace with your exact NVIDIA render node or by-path symlink
+    
     render-drm-device "/dev/dri/renderD128" 
 }
 prefer-no-csd
