@@ -15,7 +15,7 @@
     	  "pulseaudio#microphone",
         "niri/language",
         "pulseaudio",
-        "custom/power"
+        "custom/power",
       
     ],
 
@@ -36,12 +36,6 @@
         "on-click": "pavucontrol"
     },
 
-    "custom/power": {
-        "format": "⏻",
-        "on-click": "systemctl poweroff",
-        "on-click-right": "systemctl reboot",
-        "tooltip": false
-    },
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "format-source": "mic on",
@@ -50,6 +44,12 @@
         "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
         "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
         "scroll-step": 5
+    },
+    "custom/power": {
+        "format": "⏻",
+        "on-double-click": "systemctl poweroff",
+        "on-double-click-right": "systemctl reboot",
+        "tooltip": false
     }
 }
 
