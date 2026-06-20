@@ -50,6 +50,16 @@
         "on-double-click": "systemctl poweroff",
         "on-double-click-right": "systemctl reboot",
         "tooltip": false
+    },
+    "battery": {
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "bat: {capacity}",
+    "format-charging": "bat: {capacity}+",
+    "format-plugged": "bat: {capacity}=",
+    "tooltip": false
     }
 }
 
