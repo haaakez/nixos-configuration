@@ -1,0 +1,40 @@
+{
+    "logo": {
+        "type": "small"
+    },
+    "display": {
+        "separator": " "
+    },
+    "modules": [
+        {
+            "type": "os",
+            "key": " ",
+            "keyColor": "34"
+        },
+        {
+            "type": "kernel",
+            "key": " ",
+            "keyColor": "34"
+        },
+        {
+            "type": "shell",
+            "key": " ",
+            "keyColor": "34"
+        },
+        {
+            "type": "uptime",
+            "key": " ",
+            "keyColor": "34"
+        },
+        {
+            "type": "memory",
+            "key": "󰍛 ",
+            "keyColor": "34"
+        },
+        {
+           "type": "disk",
+           "key": "󰋊 ",
+           "keyColor": "34"
+        }, 
+    ]
+}
