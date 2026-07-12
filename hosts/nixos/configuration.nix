@@ -40,8 +40,11 @@
       LIBINPUT_ATTR_ACCEL_POINTS_MOTION=0.000;0.079;0.159;0.274;0.393;0.512;0.632;0.804;0.985;1.167;1.348;1.529;1.711;1.892;2.074;2.255;2.436;2.618;2.799;2.981;3.355
       LIBINPUT_ATTR_ACCEL_STEP_MOTION=0.2031610269
   '';
-
-  # --- LOCALIZATION,NETWORKING ---
+   environment.etc."libinput/local-overrides.quirks".text = ''
+     [Logitech G502 X PLUS Wireless]
+     MatchName=*Logitech G502 X PLUS*
+     AttrEventCode=-REL_WHEEL_HI_RES;-REL_HWHEEL_HI_RES;
+   '';
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Sofia";
