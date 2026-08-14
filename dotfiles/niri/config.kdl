@@ -127,8 +127,9 @@ input {
     mouse {
         // off
         // natural-scroll
-         accel-speed -0.6
-        // accel-profile "adaptive"
+         accel-speed -0.9
+		//accel-speed 0
+         //accel-profile "flat"
         // scroll-method "no-scroll"
     }
 
@@ -161,9 +162,13 @@ output "HDMI-A-1"{
 	mode "1920x1080@239.999"
 	position x=0 y=0
 }
-output "DP-2"{
-	mode "1920x1080@239.999"
+output "DP-3"{
+	mode "2560x1440@179.999"
 	position x=1920 y=0
+}
+output "DP-2"{
+	mode "1920x1080@180.003"
+	position x=0 y=0
 }
 /-output "eDP-1" {
     // Uncomment this line to disable this output.
@@ -201,7 +206,7 @@ output "DP-2"{
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 10
+    gaps 8
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left

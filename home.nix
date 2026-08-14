@@ -1,9 +1,10 @@
 { config, pkgs, inputs, ... }:
-
+	
 {
   home.username = "haakez";
   home.homeDirectory = "/home/haakez";
   home.stateVersion = "25.11";
+  home.sessionPath = [ "$HOME/.local/bin" ];
 
 imports = [ 
     inputs.textfox.homeManagerModules.default
@@ -22,6 +23,19 @@ xdg.configFile = {
     
     
   };
+
+    gtk = {
+      enable = true;
+      theme = {
+        name = "Adwaita-dark";
+        package = pkgs.gnome-themes-extra;
+      };
+      iconTheme = {
+        name = "Papirus-Dark"; # Or "Adwaita" if you prefer
+        package = pkgs.papirus-icon-theme;
+      };
+    };
+  
 programs.firefox.profiles."haakez".settings = {
     "widget.wayland.transparent-background" = true;
     "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
@@ -70,6 +84,16 @@ programs.spicetify =
         shuffle
       ];
     };
+    dconf.settings = {
+        "org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+        };
+      };
+      qt = {
+            enable = true;
+            platformTheme.name = "gtk";
+            style.name = "adwaita-dark";
+          };
     programs.micro = {
       enable = true;
       settings = {
@@ -87,6 +111,7 @@ programs.spicetify =
     cava
     mangohud
 
+	inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     kitty
     neovim
     vscode
@@ -94,17 +119,16 @@ programs.spicetify =
     gimp
     gphoto2
     unityhub
-    
-
-    fastfetch
+    gamescope
+	    fastfetch
     btop
     yazi
-    kdePackages.dolphin
     kdePackages.ark
     kdePackages.kdenlive
     pavucontrol
     cmatrix
     peaclock
+    prismlauncher
 
     waybar
     swaybg

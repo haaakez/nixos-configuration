@@ -9,10 +9,47 @@
     dates = "weekly";
     options= "--delete-older-than 7d";
   };
+  services.printing.enable = true;
+  services.printing.drivers = [ pkgs.cnijfilter2 ];
+systemd.services.simple-input-overlay = {
+  description = "Simple Input Overlay Event Server";
+  
+  # Ensure the service starts after the graphical display/input devices are ready
+  after = [ "network.target" "multi-user.target" ];
+  wantedBy = [ "multi-user.target" ];
+
+  serviceConfig = {
+    Type = "simple";
+    
+    # Run as root to ensure it can access /dev/input/event*
+    User = "root"; 
+    
+    # Run inside a Python environment configured with the required packages
+    ExecStart = let
+      # Create a custom python wrapper with the required packages
+      pythonEnv = pkgs.python3.withPackages (ps: with ps; [ websockets evdev ]);
+    in "${pythonEnv}/bin/python /home/haakez/simple-input-overlay/server.py";
+
+    # Restart behavior if the script crashes
+    Restart = "always";
+    RestartSec = "3s";
+  };
+  
+  # Inject nixpkgs dependencies if needed
+  path = [ pkgs.python3 ];
+};
 
   # --- BOOT,HARDWARE ---
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.theme = pkgs.minimal-grub-theme;
+
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    device = "nodev";
+    useOSProber = true;
+  };
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.blacklistedKernelModules = [ "amdgpu" "radeon" ];
   boot.consoleLogLevel = 0;
@@ -22,17 +59,17 @@
     enable = true;
     enable32Bit = true;
   };
-
+  environment.localBinInPath = true;
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
     powerManagement.finegrained = false;
-    open = false;
+    open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
-
+programs.dconf.enable = true;
   # Custom Mouse Acceleration
   services.udev.extraHwdb = ''
     evdev:name:*
@@ -118,7 +155,8 @@
       git
       fish
       python3
-      nemo
+      nautilus
+      bubblewrap
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -126,7 +164,7 @@
   users.users.haakez = {
     isNormalUser = true;
     description = "haakez";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "input" ];
     shell = pkgs.fish;
   };
   fonts.packages = with pkgs; [
