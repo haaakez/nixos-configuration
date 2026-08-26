@@ -21,21 +21,21 @@ systemd.services.simple-input-overlay = {
   serviceConfig = {
     Type = "simple";
     
-    # Run as root to ensure it can access /dev/input/event*
+
     User = "root"; 
     
-    # Run inside a Python environment configured with the required packages
+
     ExecStart = let
-      # Create a custom python wrapper with the required packages
+
       pythonEnv = pkgs.python3.withPackages (ps: with ps; [ websockets evdev ]);
     in "${pythonEnv}/bin/python /home/haakez/simple-input-overlay/server.py";
 
-    # Restart behavior if the script crashes
+
     Restart = "always";
     RestartSec = "3s";
   };
   
-  # Inject nixpkgs dependencies if needed
+
   path = [ pkgs.python3 ];
 };
 
