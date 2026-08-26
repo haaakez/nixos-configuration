@@ -162,7 +162,7 @@ programs.spicetify =
 
     # 2. Dynamic Wallpaper Picker
     (writeShellScriptBin "wallpicker" ''
-      WALL_DIR="$HOME/Pictures/Wallpapers"
+      WALL_DIR="$HOME/nixos-configuration/Wallpapers"
       TMP_FILE="/tmp/wall_picker_target"
       CACHE_FILE="$HOME/.cache/current_wallpaper"
 
