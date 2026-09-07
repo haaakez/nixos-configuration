@@ -69,6 +69,10 @@ systemd.services.simple-input-overlay = {
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
+  fileSystems."/home/haakez/recordings" = {
+    device = "/dev/nvme0n1p3";
+    fsType = "ext4";
+  };
 programs.dconf.enable = true;
   # Custom Mouse Acceleration
   services.udev.extraHwdb = ''
