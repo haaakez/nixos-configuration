@@ -12,33 +12,34 @@
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.cnijfilter2 ];
 systemd.services.simple-input-overlay = {
-  description = "Simple Input Overlay Event Server";
-  
-  # Ensure the service starts after the graphical display/input devices are ready
-  after = [ "network.target" "multi-user.target" ];
+  description = "Simple Input Overlay Event & MPRIS Server";
   wantedBy = [ "multi-user.target" ];
+  after = [ "network.target" "sound.target" ];
+
+  path = with pkgs; [
+    playerctl
+    (python3.withPackages (ps: with ps; [
+      websockets
+      evdev
+    ]))
+  ];
+
+  # Allow the service to speak to user-level D-Bus (Spotify/MPRIS)
+  environment = {
+    DBUS_SESSION_BUS_ADDRESS = "unix:path=/run/user/1000/bus";
+    XDG_RUNTIME_DIR = "/run/user/1000";
+  };
 
   serviceConfig = {
     Type = "simple";
-    
-
-    User = "root"; 
-    
-
-    ExecStart = let
-
-      pythonEnv = pkgs.python3.withPackages (ps: with ps; [ websockets evdev ]);
-    in "${pythonEnv}/bin/python /home/haakez/simple-input-overlay/server.py";
-
-
+    User = "haakez";
+    SupplementaryGroups = [ "input" ];
+    WorkingDirectory = "/home/haakez/obs-utils";
+    ExecStart = "${pkgs.python3.withPackages (ps: with ps; [ websockets evdev ])}/bin/python3 /home/haakez/obs-utils/server.py";
     Restart = "always";
-    RestartSec = "3s";
+    RestartSec = 3;
   };
-  
-
-  path = [ pkgs.python3 ];
 };
-
   # --- BOOT,HARDWARE ---
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
