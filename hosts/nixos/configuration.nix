@@ -156,8 +156,19 @@ programs.dconf.enable = true;
   environment.sessionVariables = {
     QT_STYLE_OVERRIDE = "Breeze-Dark";
   };
+  services.flatpak.enable = true;
+  services.flatpak.remotes = [{
+    name = "flathub";
+    location = "https://flathub.org";
+  }];
+  services.flatpak.packages = [
+    "flathub;org.vinegarhq.Sober"
+  ];
+  
   environment.systemPackages = with pkgs; [
       git
+      gcc
+      gpp
       fish
       python3
       nautilus

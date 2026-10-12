@@ -5,7 +5,7 @@
 
 blur {
 
-    passes 3
+    passes 4
 
     offset 3.0
     
