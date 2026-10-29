@@ -75,3 +75,32 @@ notebook > header > tabs > tab:checked {
 scale {
   margin: 4px 8px;
 }
+
+headerbar {
+  padding: 6px 10px;
+}
+headerbar button, headerbar entry {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 6px 8px;
+  margin: 0 2px;
+}
+headerbar button:hover {
+  background: #262626;
+}
+.sidebar, .navigation-sidebar, placessidebar, placessidebar list {
+  background: transparent;
+}
+row.sidebar-row, .navigation-sidebar row {
+  min-height: 28px;
+  padding: 3px 10px;
+  margin: 1px 6px;
+}
+row.sidebar-row:hover, .navigation-sidebar row:hover {
+  background: #262626;
+}
+row.sidebar-row:selected, .navigation-sidebar row:selected {
+  background: #426237;
+  color: #ffffff;
+}

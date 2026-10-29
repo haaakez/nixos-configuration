@@ -166,11 +166,13 @@ programs.dconf.enable = true;
   ];
   
   environment.systemPackages = with pkgs; [
+      config.home-manager.users.haakez.gtk.theme.package
       git
       gcc
       gpp
       fish
       python3
+      nautilus
       bubblewrap
     ];
 

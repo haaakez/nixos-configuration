@@ -188,7 +188,6 @@ programs.spicetify =
 	    fastfetch
     btop
     yazi
-    nemo
     kdePackages.ark
     kdePackages.kdenlive
     pavucontrol
