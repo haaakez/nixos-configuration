@@ -74,7 +74,7 @@ almost all directories in `dotfiles/` are linked into `~/.config/` through home-
 
 the **`Wallpapers/`** folder contains my... wallpapers, theyre pretty decent
   
-if you want to actually install them, then:
+if you want to actually install the config, then:
 ```bash
 git clone https://github.com/haaakez/nixos-configuration
 cd nixos-configuration  # you might probably also want to replace the hardware config with the pre-generated config
