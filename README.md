@@ -6,7 +6,7 @@ my nixos config built with home-manager, which uses niri as its compositor
 
 ![desktop screenshot](media/screenshot.png)
 
-[watch the desktop preview](media/preview.mp4)
+![desktop preview](media/preview.gif)
 
 ## system components
 
