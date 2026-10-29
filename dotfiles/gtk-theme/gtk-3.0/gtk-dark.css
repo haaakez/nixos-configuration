@@ -1,0 +1,53 @@
+@import url("resource:///org/gtk/libgtk/theme/Adwaita/gtk-dark.css");
+
+@define-color theme_fg_color #ffffff;
+@define-color theme_text_color #ffffff;
+@define-color theme_bg_color #000000;
+@define-color theme_base_color #000000;
+@define-color theme_selected_bg_color #426237;
+@define-color theme_selected_fg_color #ffffff;
+@define-color insensitive_fg_color #989898;
+@define-color borders #585858;
+@define-color unfocused_borders #262626;
+@define-color warning_color #e5c07b;
+@define-color error_color #c678dd;
+@define-color success_color #98c379;
+@define-color accent_color #98c379;
+
+window.background:not(#waybar), window.background:not(#waybar):backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+  background-image: none;
+}
+headerbar, .titlebar, toolbar, .sidebar, placessidebar,
+.view, treeview.view, textview, textview text {
+  background-color: transparent;
+  background-image: none;
+  color: #ffffff;
+}
+button, entry, searchbar, popover, menu, .menu {
+  background-color: #262626;
+  color: #ffffff;
+  border-color: #585858;
+}
+button:hover, modelbutton:hover, menuitem:hover {
+  background-color: #585858;
+}
+*:selected, *:selected:focus {
+  background-color: #426237;
+  color: #ffffff;
+}
+entry:focus, button:focus { border-color: #c678dd; }
+progressbar progress, scale highlight, switch:checked { background-color: #98c379; }
+link, link:visited { color: #c678dd; }
+
+headerbar:backdrop, .titlebar:backdrop, toolbar:backdrop, .sidebar:backdrop, placessidebar:backdrop,
+.view:backdrop, treeview.view:backdrop, textview:backdrop, textview text:backdrop {
+  background-color: transparent;
+  background-image: none;
+  color: #ffffff;
+}
+
+window.background:not(#waybar) *:backdrop {
+  color: #ffffff;
+  opacity: 1;
+}

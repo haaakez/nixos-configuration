@@ -1,0 +1,77 @@
+@define-color window_bg_color #000000;
+@define-color window_fg_color #ffffff;
+@define-color view_bg_color #000000;
+@define-color view_fg_color #ffffff;
+@define-color headerbar_bg_color #000000;
+@define-color headerbar_fg_color #ffffff;
+@define-color card_bg_color #262626;
+@define-color accent_bg_color #426237;
+@define-color accent_fg_color #ffffff;
+@define-color accent_color #98c379;
+@define-color theme_bg_color #000000;
+@define-color theme_fg_color #ffffff;
+@define-color theme_base_color #000000;
+@define-color theme_text_color #ffffff;
+@define-color theme_selected_bg_color #426237;
+@define-color theme_selected_fg_color #ffffff;
+
+window.background, window.background:backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+  background-image: none;
+  color: #ffffff;
+}
+headerbar, headerbar:backdrop, window.background .background {
+  background-color: transparent;
+  background-image: none;
+  color: #ffffff;
+}
+button, entry, dropdown, popover contents {
+  background-color: #262626;
+  color: #ffffff;
+}
+button:hover { background-color: #585858; }
+selection { background-color: #426237; color: #ffffff; }
+progressbar progress, scale highlight, switch:checked { background-color: #98c379; }
+
+scale trough {
+  min-height: 4px;
+  min-width: 4px;
+  background: #585858;
+  border-radius: 0;
+}
+scale highlight {
+  background: #ffffff;
+  border-radius: 0;
+}
+scale slider, scale slider:hover, scale slider:active, scale slider:backdrop {
+  min-width: 12px;
+  min-height: 12px;
+  background: #ffffff;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+notebook > header > tabs > tab {
+  padding: 8px 12px;
+}
+scale {
+  padding: 6px 8px;
+}
+scale slider, scale slider:hover, scale slider:active, scale slider:backdrop {
+  border: 1px solid #262626;
+}
+
+button, entry, dropdown, popover contents {
+  padding: 6px 10px;
+  border-radius: 0;
+}
+notebook > header {
+  padding: 4px 8px;
+}
+notebook > header > tabs > tab:checked {
+  border-bottom: 2px solid #c678dd;
+}
+scale {
+  margin: 4px 8px;
+}

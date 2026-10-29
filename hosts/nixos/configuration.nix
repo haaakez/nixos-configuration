@@ -122,7 +122,7 @@ programs.dconf.enable = true;
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd \"env QT_QPA_PLATFORMTHEME=qt6ct GTK_THEME=Adwaita:dark niri-session\"";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd \"env QT_QPA_PLATFORMTHEME=qt6ct GTK_THEME=Graphite-Mono niri-session\"";
         user = "greeter";
       };
     };
@@ -150,7 +150,7 @@ programs.dconf.enable = true;
   # --- ENVIRONMENT,USER ---
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-    GTK_THEME = "Adwaita:dark";
+    GTK_THEME = "Graphite-Mono";
     QT_QPA_PLATFORMTHEME = "qt6ct";
   };
   environment.sessionVariables = {
@@ -171,7 +171,6 @@ programs.dconf.enable = true;
       gpp
       fish
       python3
-      nautilus
       bubblewrap
     ];
 
