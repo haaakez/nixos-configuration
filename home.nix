@@ -3,6 +3,7 @@
 {
   home.username = "haakez";
   home.homeDirectory = "/home/haakez";
+  home.file.".vscode-oss/extensions/haakez.graphite-mono-1.0.0".source = ./dotfiles/vscodium-theme;
   home.stateVersion = "25.11";
   home.sessionPath = [ "$HOME/.local/bin" ];
 
@@ -179,7 +180,7 @@ programs.spicetify =
 
     kitty
     neovim
-    vscode
+    vscodium
     darktable
     gimp
     gphoto2
