@@ -104,3 +104,12 @@ row.sidebar-row:selected, .navigation-sidebar row:selected {
   background: #426237;
   color: #ffffff;
 }
+
+gridview > child:selected, gridview > child:selected:backdrop,
+listview > row:selected, listview > row:selected:backdrop,
+columnview row:selected, columnview row:selected:backdrop {
+  background-color: #426237;
+  color: #ffffff;
+  outline: 1px solid #98c379;
+  outline-offset: -1px;
+}

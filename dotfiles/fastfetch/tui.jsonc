@@ -1,6 +1,14 @@
 {
     "logo": {
-        "type": "small"
+        "type": "small",
+        "color": {
+            "1": "#989898",
+            "2": "#585858",
+            "3": "#989898",
+            "4": "#585858",
+            "5": "#989898",
+            "6": "#585858"
+        }
     },
     "display": {
         "separator": " "
@@ -9,32 +17,32 @@
         {
             "type": "os",
             "key": " ",
-            "keyColor": "34"
+            "keyColor": "#d4d4d4"
         },
         {
             "type": "kernel",
             "key": " ",
-            "keyColor": "34"
+            "keyColor": "#d4d4d4"
         },
         {
             "type": "shell",
             "key": " ",
-            "keyColor": "34"
+            "keyColor": "#d4d4d4"
         },
         {
             "type": "uptime",
             "key": " ",
-            "keyColor": "34"
+            "keyColor": "#d4d4d4"
         },
         {
             "type": "memory",
             "key": "󰍛 ",
-            "keyColor": "34"
+            "keyColor": "#d4d4d4"
         },
         {
            "type": "disk",
            "key": "󰋊 ",
-           "keyColor": "34"
+           "keyColor": "#d4d4d4"
         }, 
     ]
 }
