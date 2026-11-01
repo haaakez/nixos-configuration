@@ -16,7 +16,7 @@ my nixos config built with home-manager, which uses niri as its compositor
 - **terminal:** Kitty
 - **bar:** Waybar
 - **browser:** Firefox
-- **file manager:** Nemo
+- **file manager:** Nautilus
 - **launcher:** Fuzzel
 - **notifications:** Fnott
 - **system monitor:** btop
@@ -27,25 +27,32 @@ my nixos config built with home-manager, which uses niri as its compositor
 nixos-configuration/
 ├── flake.nix
 ├── flake.lock
-├── home.nix
+├── home.nix             # desktop home config(dont ask why its here)
 ├── hosts/
-│   └── nixos/
+│   ├── nixos/
+│   │   ├── configuration.nix
+│   │   └── hardware-configuration.nix
+│   └── nixos_laptop/
 │       ├── configuration.nix
-│       └── hardware-configuration.nix
+│       ├── hardware-configuration.nix
+│       └── home.nix
 ├── dotfiles/
-│   ├── btop/
-│   ├── fastfetch/
-│   ├── fnott/
-│   ├── fuzzel/
-│   ├── gtk-theme/
-│   │   ├── gtk-3.0/
-│   │   └── gtk-4.0/
-│   ├── kitty/
-│   ├── niri/
-│   ├── qt5ct/
-│   ├── qt6ct/
-│   └── waybar/
-└── Wallpapers/
+│   ├── nixos/
+│   │   ├── niri/
+│   │   ├── waybar/
+│   │   ├── kitty/
+│   │   ├── gtk-theme/
+│   │   └── ...
+│   └── nixos_laptop/
+│       ├── niri/
+│       ├── waybar/
+│       ├── kitty/
+│       ├── gtk-theme/
+│       ├── cava/
+│       ├── vesktop-theme.css
+│       └── ...
+├── Wallpapers/
+└── media/
 ```
 
 ### nix files
@@ -54,11 +61,12 @@ nixos-configuration/
 - **`flake.lock`** locks the versions of the flake inputs
 - **`home.nix`** defines the packages i use, also has some scripts and firefox/spicetifytui styling
 - **`hosts/nixos/configuration.nix`** the unique thing here is that it has a custom scroll wheel and mouse accel, other than that it just has the drivers and some important pkgs
-- **`hosts/nixos/hardware-configuration.nix`** you should delete this if ur installing this on a different machine
+- **`hosts/nixos_laptop/`** contains the laptop-specific system, hardware, and home configuration
+- **`hardware-configuration.nix`** in each host contains its disk and hardware settings, generate a new one for a different machine
 
 ### dotfiles
 
-almost all directories in `dotfiles/` are linked into `~/.config/` through home-manager
+both hosts have their own directories under `dotfiles/`, application settings are linked into `~/.config/` through home-manager
 
 - **`niri/`** - window layout, rules, binds
 - **`waybar/`** - the waybar config
@@ -72,6 +80,10 @@ almost all directories in `dotfiles/` are linked into `~/.config/` through home-
 
 ### other
 
+**laptop config look:**
+
+![Laptop configuration look](media/laptop-screenshot.png)
+
 the **`Wallpapers/`** folder contains my... wallpapers, theyre pretty decent
   
 if you want to actually install the config, then:
@@ -83,5 +95,6 @@ cd nixos-configuration  # you might probably also want to replace the hardware c
 Apply the configuration:
 
 ```bash
-sudo nixos-rebuild switch --flake .#nixos
+sudo nixos-rebuild switch --flake .#nixos         # desktop
+sudo nixos-rebuild switch --flake .#nixos_laptop  # laptop
 ```

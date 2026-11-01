@@ -1,0 +1,96 @@
+{
+    "logo": {
+        "color": {
+            "1": "#989898",
+            "2": "#585858",
+            "3": "#989898",
+            "4": "#585858",
+            "5": "#989898",
+            "6": "#585858"
+        }
+    },
+    "display": {
+        "separator": " "
+    },
+    "modules": [
+        {
+            "type": "title",
+            "keyWidth": 10
+        },
+        "break",
+        {
+            "type": "os",
+            "key": " ",
+            "keyColor": "#d4d4d4"
+        },
+        {
+            "type": "kernel",
+            "key": " ",
+            "keyColor": "#d4d4d4"
+        },
+        {
+            "type": "packages",
+            "format": "packages: {}",
+            "key": " ",
+            "keyColor": "#d4d4d4"
+        },
+        {
+            "type": "shell",
+            "key": " ",
+            "keyColor": "#d4d4d4"
+        },
+        {
+            "type": "terminal",
+            "key": " ",
+            "keyColor": "#d4d4d4"
+        },
+        {
+            "type": "wm",
+            "key": " ",
+            "keyColor": "#d4d4d4"
+        },
+        {
+            "type": "cursor",
+            "key": " ",
+            "keyColor": "#d4d4d4"
+        },
+        {
+            "type": "terminalfont",
+            "key": " ",
+            "keyColor": "#d4d4d4"
+        },
+        {
+            "type": "uptime",
+            "key": " ",
+            "keyColor": "#d4d4d4"
+        },
+        {
+            "type": "datetime",
+            "format": "{1}-{3}-{11}",
+            "key": " ",
+            "keyColor": "#d4d4d4"
+        },
+        {
+            "type": "cpu",
+            "key": " ",
+            "keyColor": "#d4d4d4"
+        },
+        {
+            "type": "gpu",
+            "key": "󰢮 ",
+            "keyColor": "#d4d4d4"
+        },
+        {
+            "type": "memory",
+            "key": "󰍛 ",
+            "keyColor": "#d4d4d4"
+        },
+        {
+            "type": "disk",
+            "key": "󰋊 ",
+            "keyColor": "#d4d4d4"
+        },
+        "break",
+        "colors"
+    ]
+}

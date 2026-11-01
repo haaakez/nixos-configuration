@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Graphite Mono
+
+[X-GNOME-Metatheme]
+GtkTheme=Graphite-Mono
+MetacityTheme=Adwaita
+IconTheme=Papirus-Dark
+CursorTheme=Adwaita

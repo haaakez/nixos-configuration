@@ -3,7 +3,7 @@
 {
   home.username = "haakez";
   home.homeDirectory = "/home/haakez";
-  home.file.".vscode-oss/extensions/haakez.graphite-mono-1.0.0".source = ./dotfiles/vscodium-theme;
+  home.file.".vscode-oss/extensions/haakez.graphite-mono-1.0.0".source = ./dotfiles/nixos/vscodium-theme;
   home.stateVersion = "25.11";
   home.sessionPath = [ "$HOME/.local/bin" ];
 
@@ -11,15 +11,15 @@ imports = [
     inputs.spicetify-nix.homeManagerModules.default
   ];
 xdg.configFile = {
-    "waybar".source = ./dotfiles/waybar;
-    "fnott".source = ./dotfiles/fnott;
-    "kitty".source = ./dotfiles/kitty;
-    "fastfetch".source = ./dotfiles/fastfetch;
-    "fuzzel".source = ./dotfiles/fuzzel;
-    "btop".source = ./dotfiles/btop;
-    "qt5ct".source = ./dotfiles/qt5ct;
-    "qt6ct".source = ./dotfiles/qt6ct;
-    "niri".source = ./dotfiles/niri;
+    "waybar".source = ./dotfiles/nixos/waybar;
+    "fnott".source = ./dotfiles/nixos/fnott;
+    "kitty".source = ./dotfiles/nixos/kitty;
+    "fastfetch".source = ./dotfiles/nixos/fastfetch;
+    "fuzzel".source = ./dotfiles/nixos/fuzzel;
+    "btop".source = ./dotfiles/nixos/btop;
+    "qt5ct".source = ./dotfiles/nixos/qt5ct;
+    "qt6ct".source = ./dotfiles/nixos/qt6ct;
+    "niri".source = ./dotfiles/nixos/niri;
     
     
   };
@@ -30,7 +30,7 @@ xdg.configFile = {
         name = "Graphite-Mono";
         package = pkgs.runCommand "graphite-mono-gtk-theme" {} ''
           mkdir -p "$out/share/themes"
-          cp -r ${./dotfiles/gtk-theme} "$out/share/themes/Graphite-Mono"
+          cp -r ${./dotfiles/nixos/gtk-theme} "$out/share/themes/Graphite-Mono"
         '';
       };
       gtk4.theme = config.gtk.theme;

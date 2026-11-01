@@ -1,0 +1,22 @@
+{
+  "name": "graphite-mono",
+  "displayName": "Graphite Mono",
+  "description": "A dark graphite theme with soft, muted colors.",
+  "version": "1.0.0",
+  "publisher": "haakez",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Graphite Mono",
+        "uiTheme": "vs-dark",
+        "path": "./themes/graphite-mono-color-theme.json"
+      }
+    ]
+  }
+}
